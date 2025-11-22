@@ -8,7 +8,7 @@ model = os.getenv("MODEL", "gemini-2.5-flash")
 ReviewAndPolishAgent = Agent(
     model=model,
     name="ReviewAndPolishAgent",
-    description="輸入ContentWritingAgent產出的文章內容",
+    description="輸入ContentWritingAgent產出的文章內容{EssayContent}，對文章進行審核和潤色，確保符合國考作文標準",
     instruction="""
     處理過程
     1. 仔細審核文章內容，檢查語法、拼寫和標點符號錯誤
