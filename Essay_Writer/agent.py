@@ -1,14 +1,17 @@
 from google.adk.agents import Agent
+import os
+from dotenv import load_dotenv
 
-from .sub_agents import (
-    TopicAnalysisAgent,
-    OutlineGenerationAgent,
-    ContentWritingAgent,
-    ReviewAndPolishAgent,
-)
+load_dotenv()
+model = os.getenv("MODEL", "gemini-2.5-flash")
+
+from .sub_agents.TopicAnalysisAgent.TopicAnalysisAgent import TopicAnalysisAgent
+from .sub_agents.OutlineGenerationAgent.OutlineGenerationAgent import OutlineGenerationAgent
+from .sub_agents.ContentWritingAgent.ContentWritingAgent import ContentWritingAgent
+from .sub_agents.ReviewAndPolishAgent.ReviewAndPolishAgent import ReviewAndPolishAgent
 
 root_agent = Agent(
-    model='gemini-2.5-flash',
+    model=model,
     name='Essay_Writer_Agent',
     description='一個專業國家考試作文寫手，能夠根據使用者提供的主題分析、生成大綱、撰寫內容並進行審核和潤色。',
     instruction=f"""

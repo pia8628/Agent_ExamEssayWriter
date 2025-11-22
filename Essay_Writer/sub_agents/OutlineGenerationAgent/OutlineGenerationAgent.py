@@ -1,7 +1,12 @@
 from google.adk.agents import Agent
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+model = os.getenv("MODEL", "gemini-2.5-flash")
 
 OutlineGenerationAgent = Agent(
-    model='gemini-2.5-flash',
+    model=model,
     name="OutlineGenerationAgent",
     description="輸入TopicAnalysisAgent產出的題目分析報告",
     instruction="""

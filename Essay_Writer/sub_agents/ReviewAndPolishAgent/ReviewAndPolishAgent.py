@@ -1,7 +1,12 @@
 from google.adk.agents import Agent
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+model = os.getenv("MODEL", "gemini-2.5-flash")
 
 ReviewAndPolishAgent = Agent(
-    model='gemini-2.5-flash',
+    model=model,
     name="ReviewAndPolishAgent",
     description="輸入ContentWritingAgent產出的文章內容",
     instruction="""
