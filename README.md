@@ -12,10 +12,10 @@
 ```mermaid
 flowchart TD
     UserPrompt[使用者題目] --> Root[root_agent]
-    Root --> A[TopicAnalysisAgent\n題目解析/題型判斷]
-    A --> B[OutlineGenerationAgent\n起承轉合大綱與字數配置]
-    B --> C[ContentWritingAgent\n段落撰寫]
-    C --> D[ReviewAndPolishAgent\n語法與邏輯檢查]
+    Root --> A[TopicAnalysisAgent \n題目解析/題型判斷]
+    A --> B[OutlineGenerationAgent \n起承轉合大綱與字數配置]
+    B --> C[ContentWritingAgent \n段落撰寫]
+    C --> D[ReviewAndPolishAgent \n語法與邏輯檢查]
     D --> Output[最終文章]
 ```
 
