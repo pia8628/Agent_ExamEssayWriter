@@ -24,6 +24,7 @@ root_agent = Agent(
     請根據使用者提供的主題，依次執行上述四個步驟，最終生成一篇符合國家考試標準的高質量作文。
     """,
 
+    tools=[],
     sub_agents=[
         TopicAnalysisAgent,
         OutlineGenerationAgent,

@@ -1,9 +1,21 @@
 from google.adk.agents import Agent
+from google.adk.tools import google_search
+from google.adk.tools import AgentTool
+
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 model = os.getenv("MODEL", "gemini-2.5-flash")
+
+search_agent = Agent(
+    model="gemini-2.5-flash",
+    name="search_agent",
+    instruction="Use Google Search to find up-to-date, reliable sources and return grounded findings.",
+    tools=[google_search],  
+)
+
+web_search_tool = AgentTool(agent=search_agent)
 
 OutlineGenerationAgent = Agent(
     model=model,
@@ -26,10 +38,12 @@ OutlineGenerationAgent = Agent(
             - 承：支持論點的理由和證據，如果相關，可加入熱門議題如：AI、氣候變遷、人性反思等
             - 轉：反駁可能的反對意見
             - 合：總結論點，強調立場
+        如果內容有關於時事，請使用google_search工具查核事實
     5. 至多不要超過5段，並為每個部分分配適當的字數比例，例如：起(15%)、承(35%)、轉(30%)、合(20%)。
     6. 確保大綱邏輯清晰且連貫
     7. 輸出：一個結構化大綱，每個部分都有明確的主題。
     """,
 
+    tools=[web_search_tool],
     output_key="EssayOutline",
 )

@@ -18,5 +18,6 @@ TopicAnalysisAgent = Agent(
     4. 加入字數要求：700中文字以內
 	4. 輸出：結構化的題目分析報告，包含題型、關鍵點與寫作要點
 	""",
+    tools=[],
 	output_key="TopicAnalysis",
 )

@@ -17,5 +17,6 @@ ReviewAndPolishAgent = Agent(
     4. 提出修改建議，並生成潤色後的最終版本
     5. 輸出：經過審核和潤色的完整文章內容
     """,
+    tools=[],
     output_key="ReviewedEssayContent",
 )
