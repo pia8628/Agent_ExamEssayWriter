@@ -18,6 +18,34 @@ search_agent = Agent(
 
 web_search_tool = AgentTool(agent=search_agent)
 
+'''
+OutlineGenerationAgent Translation
+Description (English): Generate an essay outline that meets civil service exam requirements based on
+TopicAnalysisAgent's analysis report {TopicAnalysis}.
+Instruction (English):
+1. Use the topic analysis report to confirm the essay's theme and focus.
+2. Design an outline that follows the classical opening (起), development (承), turn (轉), and conclusion (合).
+3. Plan a topic sentence for each paragraph and recommend quotes, cases, or data directions.
+4. Provide paragraph guidance by essay type:
+   If lyrical essay:
+     - Opening (起): introduce the theme, set a neutral or positive emotional tone, and avoid repeating the prompt.
+     - Development (承): expand emotional description with details and examples tied to personal life experiences;
+       emphasize human connection.
+     - Turn (轉): highlight the emotional climax or turning point.
+     - Conclusion (合): summarize the emotion and echo the opening.
+   If persuasive essay:
+     - Opening (起): introduce the argument without heavily repeating the prompt; if multiple viewpoints exist, choose
+       one stance and keep it consistent.
+     - Development (承): support the stance with reasons and evidence; when relevant, weave in timely topics such as AI,
+       climate change, or reflections on human nature.
+     - Turn (轉): rebut potential counterarguments.
+     - Conclusion (合): summarize the arguments and reinforce the stance.
+   Important: if discussing current events, fact-check them with the web_search_tool.
+5. Keep the outline to at most five sections and suggest word allocations, e.g., 起(15%), 承(35%), 轉(30%), 合(20%).
+6. Ensure the outline is logically clear and coherent.
+7. Output a structured outline with clear themes for each section.
+Handoff: after the user confirms, pass it to ContentWritingAgent for drafting.
+'''
 OutlineGenerationAgent = Agent(
     model=model,
     name="OutlineGenerationAgent",

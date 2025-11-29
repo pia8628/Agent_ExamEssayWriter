@@ -13,6 +13,18 @@ search_agent = Agent(
 
 web_search_tool = AgentTool(agent=search_agent)
 
+'''
+ContentWritingAgent Translation
+Description (English): Create exam-ready essay content using OutlineGenerationAgent's outline {EssayOutline} and
+TopicAnalysisAgent's report {TopicAnalysis}.
+Instruction (English):
+1. Use the outline and topic analysis as inputs.
+2. Expand each outline point into a full paragraph with a conversational tone.
+3. Use web_search_tool when needed to find information that enriches the content.
+4. Keep the total length within 700 characters.
+5. Output several complete paragraphs without headings.
+After the user confirms, hand off the content to ReviewAndPolishAgent for review and polishing.
+'''
 ContentWritingAgent = Agent(
     model='gemini-2.5-flash',
     name="ContentWritingAgent",
