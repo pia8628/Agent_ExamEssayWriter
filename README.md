@@ -13,10 +13,10 @@ For English version READ_ME, please see bellow.
 ```mermaid
 flowchart TD
     UserPrompt[使用者題目] --> Root[root_agent]
-    Root --> A[TopicAnalysisAgent   題目解析/題型判斷]
-    A --> B[OutlineGenerationAgent   起承轉合大綱與字數配置]
-    B --> C[ContentWritingAgent   段落撰寫]
-    C --> D[ReviewAndPolishAgent   語法與邏輯檢查]
+    Root --> A[TopicAnalysisAgent<br>題目解析/題型判斷]
+    A --> B[OutlineGenerationAgent<br>起承轉合大綱與字數配置]
+    B --> C[ContentWritingAgent<br>段落撰寫]
+    C --> D[ReviewAndPolishAgent<br>語法與邏輯檢查]
     D --> Output[最終文章]
 ```
 
@@ -77,10 +77,10 @@ The `root_agent` orchestrates four sub-agents in sequence: topic analysis, outli
 ```mermaid
 flowchart TD
     UserPrompt[User Prompt] --> Root[root_agent]
-    Root --> A[TopicAnalysisAgent<\br>Prompt analysis & type detection]
-    A --> B[OutlineGenerationAgent\nQCZH outline + word allocation]
-    B --> C[ContentWritingAgent\nParagraph drafting]
-    C --> D[ReviewAndPolishAgent\nGrammar/logic polishing]
+    Root --> A[TopicAnalysisAgent<br>Prompt analysis & type detection]
+    A --> B[OutlineGenerationAgent<br>QCZH outline + word allocation]
+    B --> C[ContentWritingAgent<br>Paragraph drafting]
+    C --> D[ReviewAndPolishAgent<br>Grammar/logic polishing]
     D --> Output[Final Essay]
 ```
 
