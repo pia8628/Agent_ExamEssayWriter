@@ -77,7 +77,7 @@ The `root_agent` orchestrates four sub-agents in sequence: topic analysis, outli
 ```mermaid
 flowchart TD
     UserPrompt[User Prompt] --> Root[root_agent]
-    Root --> A[TopicAnalysisAgent\nPrompt analysis & type detection]
+    Root --> A[TopicAnalysisAgent<\br>Prompt analysis & type detection]
     A --> B[OutlineGenerationAgent\nQCZH outline + word allocation]
     B --> C[ContentWritingAgent\nParagraph drafting]
     C --> D[ReviewAndPolishAgent\nGrammar/logic polishing]
