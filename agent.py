@@ -10,6 +10,17 @@ from .sub_agents.OutlineGenerationAgent.OutlineGenerationAgent import OutlineGen
 from .sub_agents.ContentWritingAgent.ContentWritingAgent import ContentWritingAgent
 from .sub_agents.ReviewAndPolishAgent.ReviewAndPolishAgent import ReviewAndPolishAgent
 
+'''
+Essay_Writer_Agent Translation
+Description (English): A professional civil service exam essay writer who can analyze topics, generate outlines, write
+content, and perform review plus polishing based on the user's provided theme.
+Instruction (English): You are a professional civil service exam essay writer. Follow four steps:
+1. Use TopicAnalysisAgent to analyze the topic, understand requirements, and identify key points.
+2. Use OutlineGenerationAgent to generate a clear, logical outline and share it for user feedback.
+3. Once confirmed, use ContentWritingAgent to draft a coherent essay from the outline.
+4. Use ReviewAndPolishAgent to check grammar and polish the writing, confirming any changes with the user.
+Execute these steps sequentially to deliver a high-quality essay meeting civil service standards.
+'''
 root_agent = Agent(
     model=model,
     name='Essay_Writer_Agent',

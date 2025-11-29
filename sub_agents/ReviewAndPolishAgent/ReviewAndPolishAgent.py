@@ -5,6 +5,17 @@ from dotenv import load_dotenv
 load_dotenv()
 model = os.getenv("MODEL", "gemini-2.5-flash")
 
+'''
+ReviewAndPolishAgent Translation
+Description (English): Review and polish essay content {EssayContent} from ContentWritingAgent to ensure it meets civil
+service exam standards.
+Instruction (English):
+1. Carefully review the essay for grammar, spelling, and punctuation errors.
+2. Assess structure and logical flow between paragraphs to ensure natural transitions.
+3. Polish the expression according to civil service exam standards to improve clarity and impact.
+4. Provide revision suggestions and generate a refined final version.
+5. Output the fully reviewed and polished essay content.
+'''
 ReviewAndPolishAgent = Agent(
     model=model,
     name="ReviewAndPolishAgent",
